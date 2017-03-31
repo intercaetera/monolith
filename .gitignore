@@ -31,3 +31,6 @@ npm-debug.log
 
 # secret
 src/secret.js
+
+# database
+rethink_data

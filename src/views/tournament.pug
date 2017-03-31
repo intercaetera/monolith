@@ -1,0 +1,63 @@
+extends layout
+block content
+  .meta
+    h3 #{structure.meta.name}
+    h6 #[strong Location:] #{structure.meta.location}
+    h6 #[strong Organised by:] #{structure.meta.host}
+    - if(structure.meta.rank === "store")
+        h6 Store Championship
+    if(structure.meta.rank === "casual")
+        h6 Casual Tournament
+    if(structure.meta.rank === "regional")
+        h6 Regional Championship
+    if(structure.meta.rank === "nationals")
+        h6 National Championship
+    if(structure.meta.rank === "worlds")
+        h6 World Championship
+
+
+  .players
+    table
+      thead
+        tr
+          td Pos
+          td Name
+          td Corp
+          td Runner
+          td Points
+          td Sos
+      tbody
+        each player, i in structure.players
+          tr
+            td= i+1
+            td= player.name
+            td= player.corpid
+            td= player.runnerid
+            td= player.points
+            td= player.sos
+
+  .rounds
+    - for(let i=0; i<structure.rounds.length; i++) {
+        h4 Round #{i+1}
+      }
+
+
+    //- each roundKey, i in Object.keys(structure.rounds)
+    //-   - round = structure.rounds[roundKey]
+    //-   h4 Round #{i+1}
+    //-   table
+    //-     thead
+    //-       tr
+    //-         td Table
+    //-         td Player 1
+    //-         td Player 2
+    //-         td Outcome
+    //-     tbody
+    //-       each match in round
+    //-         tr
+    //-           td= match.table
+    //-           - if(match)
+    //-               td= match.player1
+    //-           - if(match)
+    //-               td= match.player2
+    //-           td #{match.score1} : #{match.score2}

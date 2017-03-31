@@ -1,0 +1,41 @@
+2017-03-31T23:33:54.536558695 0.288201s notice: Recursively removing directory /home/mrhudson/nodejs/monolith/rethinkdb_data/tmp
+2017-03-31T23:33:54.581132006 0.332774s notice: Initializing directory /home/mrhudson/nodejs/monolith/rethinkdb_data
+2017-03-31T23:33:54.581186129 0.332828s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/home/mrhudson/nodejs/monolith/rethinkdb_data' did not already exist or is empty.)
+2017-03-31T23:33:54.581224792 0.332867s notice: Running rethinkdb 2.3.5~0xenial (GCC 5.3.1)...
+2017-03-31T23:33:54.582961875 0.334605s notice: Running on Linux 4.4.0-66-generic x86_64
+2017-03-31T23:33:54.582987025 0.334629s notice: Loading data from directory /home/mrhudson/nodejs/monolith/rethinkdb_data
+2017-03-31T23:33:54.867289322 0.618931s info: Automatically using cache size of 1504 MB
+2017-03-31T23:33:54.868177055 0.619819s notice: Listening for intracluster connections on port 29015
+2017-03-31T23:33:54.899392929 0.651035s notice: Listening for client driver connections on port 28015
+2017-03-31T23:33:54.899453163 0.651095s notice: Listening for administrative HTTP connections on port 8080
+2017-03-31T23:33:54.899456159 0.651098s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-03-31T23:33:54.899457318 0.651099s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-03-31T23:33:54.899459047 0.651101s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-03-31T23:33:54.899460127 0.651102s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-03-31T23:33:54.899461768 0.651104s notice: Server ready, "desperado_elf" d8ea5db6-2a73-494c-b6c3-0e862c61a809
+2017-03-31T23:34:45.369370980 51.121013s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-03-31T23:34:45.369427051 51.121069s notice: Shutting down client connections...
+2017-03-31T23:34:45.369470071 51.121112s notice: All client connections closed.
+2017-03-31T23:34:45.369471248 51.121113s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-03-31T23:34:45.384074910 51.135717s notice: Storage engine shut down.
+2017-03-31T23:35:12.354617881 0.052989s notice: Running rethinkdb 2.3.5~0xenial (GCC 5.3.1)...
+2017-03-31T23:35:12.356313728 0.054685s notice: Running on Linux 4.4.0-66-generic x86_64
+2017-03-31T23:35:12.356336114 0.054706s notice: Loading data from directory /home/mrhudson/nodejs/monolith/rethinkdb_data
+2017-03-31T23:35:12.557414636 0.255786s info: Automatically using cache size of 1465 MB
+2017-03-31T23:35:12.557697959 0.256068s notice: Listening for intracluster connections on port 29015
+2017-03-31T23:35:12.558409979 0.256781s notice: Listening for client driver connections on port 28015
+2017-03-31T23:35:12.558474392 0.256845s notice: Listening for administrative HTTP connections on port 8080
+2017-03-31T23:35:12.558476604 0.256847s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-03-31T23:35:12.558478663 0.256849s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-03-31T23:35:12.558480023 0.256850s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2017-03-31T23:35:12.558481839 0.256852s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-03-31T23:35:12.558483975 0.256854s notice: Server ready, "desperado_elf" d8ea5db6-2a73-494c-b6c3-0e862c61a809
+2017-03-31T23:35:51.938507083 39.636878s info: Table c9bfa789-e04f-46b1-ae83-58ccaaedcdb5: Starting a new Raft election for term 1.
+2017-03-31T23:35:51.939119050 39.637490s info: Table c9bfa789-e04f-46b1-ae83-58ccaaedcdb5: Added replica on this server.
+2017-03-31T23:35:52.020493425 39.718864s info: Table c9bfa789-e04f-46b1-ae83-58ccaaedcdb5: This server is Raft leader for term 1. Latest log index is 0.
+2017-03-31T23:36:01.828621650 49.526992s info: Changed server's name from `desperado_elf` to `desperado`.
+2017-04-01T00:38:12.228190620 3779.926561s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2017-04-01T00:38:12.228237759 3779.926608s notice: Shutting down client connections...
+2017-04-01T00:38:12.228280221 3779.926651s notice: All client connections closed.
+2017-04-01T00:38:12.228281551 3779.926652s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-04-01T00:38:12.260723069 3779.959094s notice: Storage engine shut down.

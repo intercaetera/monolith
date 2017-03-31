@@ -1,4 +1,8 @@
-export function serialise(input) {
+import clone from 'clone'
+import {Player, Match, Round, Cut} from './tournament'
+
+export function serialise(inputArray) {
+  const input = clone(inputArray)
   let output = {}
 
   output.meta = input.meta

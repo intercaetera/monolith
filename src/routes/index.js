@@ -27,7 +27,13 @@ router.get('/:shortid', (req, res) => {
     if(err) throw err
     cursor.toArray((err, result) => {
       if(err) throw err
-      res.render('tournament', {structure: deserialise(JSON.stringify(result[0].structure))})
+      console.log(result);
+      if(result.length != 0) {
+        res.render('tournament', {structure: deserialise(JSON.stringify(result[0].structure))})
+      }
+      else {
+        res.render('error', {error: '404'})
+      }
     })
   })
 })

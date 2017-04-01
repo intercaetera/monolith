@@ -37,27 +37,20 @@ block content
             td= player.sos
 
   .rounds
-    - for(let i=0; i<structure.rounds.length; i++) {
-        h4 Round #{i+1}
-      }
-
-
-    //- each roundKey, i in Object.keys(structure.rounds)
-    //-   - round = structure.rounds[roundKey]
-    //-   h4 Round #{i+1}
-    //-   table
-    //-     thead
-    //-       tr
-    //-         td Table
-    //-         td Player 1
-    //-         td Player 2
-    //-         td Outcome
-    //-     tbody
-    //-       each match in round
-    //-         tr
-    //-           td= match.table
-    //-           - if(match)
-    //-               td= match.player1
-    //-           - if(match)
-    //-               td= match.player2
-    //-           td #{match.score1} : #{match.score2}
+    each roundKey, i in Object.keys(structure.rounds)
+      - round = structure.rounds[roundKey]
+      h4 Round #{i+1}
+      table
+        thead
+          tr
+            td Table
+            td Player 1
+            td Player 2
+            td Outcome
+        tbody
+          each match in round.matches
+            tr
+              td= match.table
+              td= match.player1.name
+              td= match.player2.name
+              td #{match.score1} : #{match.score2}

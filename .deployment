@@ -1,2 +1,2 @@
 [config]
-command = yarn start
+command = node index.js

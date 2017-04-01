@@ -22,7 +22,8 @@ router.get('/:shortid', (req, res) => {
     if(err) throw err
     cursor.toArray((err, result) => {
       if(err) throw err
-      res.send(JSON.stringify(result, null, 2))
+      delete result[0].structure.meta['id']
+      res.send(JSON.stringify(result[0].structure, null, 2))
     })
   })
 })

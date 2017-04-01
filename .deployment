@@ -1,2 +1,2 @@
 [config]
-command = npm i; node index.js
+command = npm i

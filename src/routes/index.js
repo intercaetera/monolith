@@ -17,7 +17,7 @@ r.connect({
 })
 
 router.get('/', (req, res) => {
-  res.send("benis")
+  res.render("index")
 })
 
 router.get('/:shortid', (req, res) => {

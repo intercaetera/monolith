@@ -227,8 +227,6 @@ export class Cut {
   declareWinner(match, player) {
     let ids = match.p
 
-    console.log(match);
-
     if(ids[0] == player) {
       this.bracket.score(match.id, [1, 0])
     }

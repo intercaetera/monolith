@@ -56,7 +56,6 @@ export function deserialise(input) {
 
   for(let i=0; i<input.players.length; i++) {
     for(let j=0; j<input.players[i].opponents.length; j++) {
-      console.log(input.players[i].opponents);
       output.players[i].opponents[j] = findPlayer(output.players, input.players[i].opponents[j])
     }
   }

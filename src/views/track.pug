@@ -1,6 +1,5 @@
 extends layout
 block content
-
   -
     function convertFactionToIcon(faction) {
       if(faction == 'Haas-Bioroid') return 'icon-haas-bioroid'
@@ -16,28 +15,6 @@ block content
       if(faction == 'Adam') return 'icon-adam'
       if(faction == 'Sunny') return 'icon-sunny'
     }
-
-  .meta
-    h3 #{structure.meta.name}
-    h6 #[strong Location:] #{structure.meta.location}
-    h6 #[strong Organised by:] #{structure.meta.host}
-    - if(structure.meta.rank === "store")
-        h6 Store Championship
-    if(structure.meta.rank === "casual")
-        h6 Casual Tournament
-    if(structure.meta.rank === "regional")
-        h6 Regional Championship
-    if(structure.meta.rank === "nationals")
-        h6 National Championship
-    if(structure.meta.rank === "worlds")
-        h6 World Championship
-
-  .tracking
-    select#tracking
-      each player in structure.players
-        option(value=player.id)= player.name
-    button#tracking-btn Track
-
 
   .players
     table
@@ -64,8 +41,7 @@ block content
             td= player.sos
 
   .rounds
-    each roundKey, i in Object.keys(structure.rounds)
-      - round = structure.rounds[roundKey]
+    each round, i in structure.rounds
       h4 Round #{i+1}
       table
         thead
@@ -87,5 +63,3 @@ block content
                   i(class= convertFactionToIcon(match.player2.runnerfaction))
                   span= match.player2.name
               td #{match.score1} : #{match.score2}
-
-  script(src="/js/tournament.js")

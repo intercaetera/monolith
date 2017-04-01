@@ -7,12 +7,16 @@ main-color = #8AAAEB
   padding 0
   box-sizing border-box
 
+html
+  font-size 8pt
+
 body
-  height 100vh
+  min-height 100vh
   display flex
   flex-direction column
   justify-content center
   align-items center
+  position relative
 
 .button-primary
   background main-color !important
@@ -27,6 +31,30 @@ body
   align-items center
 
 table
+  padding .5rem
+
   td
-    padding .5rem
+    padding .5rem 2rem
     font-family "Roboto"
+
+    i
+      padding-right 1rem
+a
+  color rgba(main-color, .7)
+
+  &:hover
+    color main-color
+
+footer
+  font-family "Roboto"
+  border-top 2px #ddd dashed
+  width 100%
+  padding .5rem
+
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+
+  position relative
+  bottom 0

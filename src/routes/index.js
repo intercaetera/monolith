@@ -17,7 +17,7 @@ r.connect({
 })
 
 router.get('/', (req, res) => {
-  res.render("index")
+  res.render("index", {title: "Index"})
 })
 
 router.get('/:shortid', (req, res) => {
@@ -27,9 +27,34 @@ router.get('/:shortid', (req, res) => {
     if(err) throw err
     cursor.toArray((err, result) => {
       if(err) throw err
-      console.log(result);
+
       if(result.length != 0) {
-        res.render('tournament', {structure: deserialise(JSON.stringify(result[0].structure))})
+        res.render('tournament', {title: result[0].structure.meta.name, structure: deserialise(JSON.stringify(result[0].structure))})
+      }
+      else {
+        res.render('error', {error: '404'})
+      }
+    })
+  })
+})
+
+router.get('/:shortid/:playerid', (req, res) => {
+  r.db('monolith').table('tournament')
+  .filter(r.row("structure")("meta")("shortid").eq(req.params.shortid))
+  .run(connect, (err, cursor) => {
+    if(err) throw err
+    cursor.toArray((err, result) => {
+      if(err) throw err
+
+      if(result.length != 0) {
+        for(let each of result[0].structure.rounds) {
+          each.matches = each.matches.filter((el) => {
+            if(el.player1 == req.params.playerid) return true
+            else if(el.player2 == req.params.playerid) return true
+          })
+        }
+
+        res.render('track', {title: result[0].structure.meta.name, structure: deserialise(JSON.stringify(result[0].structure))})
       }
       else {
         res.render('error', {error: '404'})

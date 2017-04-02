@@ -51,7 +51,7 @@ router.post('/:uuid', (req, res) => {
         ])
         .run(connect, (err, inserted) => {
           if(err) throw err
-          res.status(200)
+          res.sendStatus(200)
         })
       }
       else {
@@ -59,7 +59,7 @@ router.post('/:uuid', (req, res) => {
         .update({structure: data})
         .run(connect, (err, updated) => {
           if(err) throw err
-          res.status(201)
+          res.sendStatus(201)
         })
       }
     })

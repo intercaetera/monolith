@@ -5,10 +5,12 @@ html
     link(rel='stylesheet', href="/css/netrunner.css")
     link(rel='stylesheet', href='/css/skeleton.css')
     link(rel='stylesheet', href='/css/normalize.css')
+    //- link(rel='stylesheet', href='https://unpkg.com/purecss@0.6.2/build/pure-min.css', integrity='sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD', crossorigin='anonymous')
     link(rel='stylesheet', href='/css/style.css')
     title Monolith - #{title}
   body
-    block content
-    footer
-      span Built with ❤ by #[a(href='http://mrhudson.yt') MrHudson] - LGPL-3.0 - #[a(href="https://github.com/MrHuds0n/monolith") GitHub]
-      a(href="/") Index
+    .container
+      block content
+      footer
+        span Built with ❤ by #[a(href='http://mrhudson.yt') MrHudson] - LGPL-3.0 - #[a(href="https://github.com/MrHuds0n/monolith") GitHub]
+        a(href="/") Index

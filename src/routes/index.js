@@ -54,7 +54,13 @@ router.get('/:shortid/:playerid', (req, res) => {
           })
         }
 
-        res.render('track', {title: result[0].structure.meta.name, structure: deserialise(JSON.stringify(result[0].structure))})
+        const output = deserialise(JSON.stringify(result[0].structure))
+        let tracked
+        for(let each of output.players) {
+          if(each.id === req.params.playerid) tracked = each.name
+        }
+
+        res.render('track', {title: output.meta.name, name: tracked, structure: output})
       }
       else {
         res.render('error', {error: '404'})

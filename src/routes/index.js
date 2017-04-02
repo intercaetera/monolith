@@ -20,7 +20,9 @@ router.get('/', (req, res) => {
   res.render("index", {title: "Index"})
 })
 
-router.get('/:shortid', (req, res) => {
+router.get('/t/:shortid', (req, res, next) => {
+  if(req.params.shortid === "api") next()
+
   r.db('monolith').table('tournament')
   .filter(r.row("structure")("meta")("shortid").eq(req.params.shortid))
   .run(connect, (err, cursor) => {
@@ -38,7 +40,7 @@ router.get('/:shortid', (req, res) => {
   })
 })
 
-router.get('/:shortid/:playerid', (req, res) => {
+router.get('/t/:shortid/:playerid', (req, res) => {
   r.db('monolith').table('tournament')
   .filter(r.row("structure")("meta")("shortid").eq(req.params.shortid))
   .run(connect, (err, cursor) => {

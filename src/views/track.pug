@@ -30,7 +30,10 @@ block content
           td Sos
       tbody
         each player, i in structure.players
-          tr
+          -
+            var weight = (player.name === name) ? "font-weight: bold" : "font-weight: normal"
+
+          tr(style=weight)
             td= i+1
             td= player.name
             td

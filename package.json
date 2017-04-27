@@ -27,6 +27,7 @@
     "shortid": "^2.2.8",
     "source-map-support": "^0.4.14",
     "stylus": "^0.54.5",
+    "thinky": "^2.3.8",
     "uuid": "^3.0.1"
   },
   "babel": {

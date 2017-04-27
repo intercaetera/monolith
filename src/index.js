@@ -19,6 +19,7 @@ app.set('view engine', 'pug')
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
+
 function compile(str, location) {
   return stylus(str)
          .set('filename', location)
